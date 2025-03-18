@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         
         nextButton.layer.cornerRadius = 10
         
+        coloredViews.forEach {
+            $0.alpha = 0.3
+        }
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -27,7 +31,7 @@ class ViewController: UIViewController {
         
         coloredViews.forEach {
             $0.layer.cornerRadius = $0.frame.width / 2
-            $0.alpha = 0.3
+
         }
     }
 
@@ -37,16 +41,18 @@ class ViewController: UIViewController {
             fatalError("Забыл заполнить коллекцию!")
         }
         
-        if currentIndexOfColorView >= 0 {
-            coloredViews[currentIndexOfColorView].alpha = 0.3
-        } else {
+        if currentIndexOfColorView == -1 {
             nextButton.setTitle("NEXT", for: .normal)
-            view.layoutIfNeeded()
         }
         
-        currentIndexOfColorView = (currentIndexOfColorView + 1) %  coloredViews.count
+        if self.currentIndexOfColorView >= 0 {
+            self.coloredViews[self.currentIndexOfColorView].alpha = 0.3
+        }
         
-        coloredViews[currentIndexOfColorView].alpha = 1
+        self.currentIndexOfColorView = (self.currentIndexOfColorView + 1) % self.coloredViews.count
+        
+        self.coloredViews[self.currentIndexOfColorView].alpha = 1
+        
     }
     
 }
