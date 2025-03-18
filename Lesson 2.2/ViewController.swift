@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     @IBOutlet var coloredViews: [UIView]!
     
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         nextButton.layer.cornerRadius = 10
         
         coloredViews.forEach {
-            $0.alpha = 0.3
+            setLightState(for: $0, isActive: false)
         }
         
     }
@@ -34,24 +34,26 @@ class ViewController: UIViewController {
 
         }
     }
+    
+    private func setLightState(for view: UIView, isActive: Bool) {
+        view.alpha = isActive ? 1.0 : 0.3
+    }
 
     @IBAction func nextButtonDidTapped() {
         
-        guard !coloredViews.isEmpty else {
-            fatalError("Забыл заполнить коллекцию!")
-        }
+        assert(coloredViews.count == 3, "Забыл заполнить коллекцию!")
         
         if currentIndexOfColorView == -1 {
             nextButton.setTitle("NEXT", for: .normal)
         }
         
-        if self.currentIndexOfColorView >= 0 {
-            self.coloredViews[self.currentIndexOfColorView].alpha = 0.3
+        if currentIndexOfColorView >= 0 {
+            setLightState(for: coloredViews[currentIndexOfColorView], isActive: false)
         }
         
-        self.currentIndexOfColorView = (self.currentIndexOfColorView + 1) % self.coloredViews.count
+        currentIndexOfColorView = (currentIndexOfColorView + 1) % coloredViews.count
         
-        self.coloredViews[self.currentIndexOfColorView].alpha = 1
+        setLightState(for: coloredViews[currentIndexOfColorView], isActive: true)
         
     }
     
