@@ -17,28 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lci-sl-BuT">
-                                <rect key="frame" x="127.5" y="40" width="65" height="256"/>
+                                <rect key="frame" x="114" y="40" width="92" height="337.5"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5z-LR-k87">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="92.5"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="D5z-LR-k87" secondAttribute="height" multiplier="1:1" id="AYC-qb-nNV"/>
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mal-kQ-KGQ">
-                                        <rect key="frame" x="0.0" y="95.5" width="65" height="65"/>
+                                        <rect key="frame" x="0.0" y="122.5" width="92" height="92.5"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="mal-kQ-KGQ" secondAttribute="height" multiplier="1:1" id="cOh-Kd-a4a"/>
-                                        </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU7-gF-eKE">
-                                        <rect key="frame" x="0.0" y="190.5" width="65" height="65.5"/>
+                                        <rect key="frame" x="0.0" y="245" width="92" height="92.5"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="AU7-gF-eKE" secondAttribute="height" multiplier="1:1" id="cmn-TE-zCz"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -64,9 +58,9 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lci-sl-BuT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Vj-hf-zFb"/>
-                            <constraint firstItem="nTP-kI-It1" firstAttribute="top" secondItem="Lci-sl-BuT" secondAttribute="bottom" constant="162" id="9Ec-NM-1JG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nTP-kI-It1" secondAttribute="bottom" constant="50" id="eRN-gp-EO5"/>
                             <constraint firstItem="nTP-kI-It1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ev4-Ao-xnc"/>
+                            <constraint firstItem="Lci-sl-BuT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.594142" id="mfy-uC-DKT"/>
                             <constraint firstItem="Lci-sl-BuT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="z9r-ta-FJr"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
