@@ -23,7 +23,6 @@ final class ViewController: UIViewController {
         coloredViews.forEach {
             setLightState(for: $0, isActive: false)
         }
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,12 +34,7 @@ final class ViewController: UIViewController {
         }
     }
     
-    private func setLightState(for view: UIView, isActive: Bool) {
-        view.alpha = isActive ? 1.0 : 0.3
-    }
-
     @IBAction func nextButtonDidTapped() {
-        
         assert(coloredViews.count == 3, "Забыл заполнить коллекцию!")
         
         if currentIndexOfColorView == -1 {
@@ -54,7 +48,10 @@ final class ViewController: UIViewController {
         currentIndexOfColorView = (currentIndexOfColorView + 1) % coloredViews.count
         
         setLightState(for: coloredViews[currentIndexOfColorView], isActive: true)
-        
+    }
+    
+    private func setLightState(for view: UIView, isActive: Bool) {
+        view.alpha = isActive ? 1.0 : 0.3
     }
     
 }
